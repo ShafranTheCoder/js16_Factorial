@@ -1,14 +1,22 @@
 "use strict";
-
-function createNewUser(){
-    let newUser = {
-        getLogin: function() {
-            return console.log(this.firstName[0].toLowerCase() + this.secondName.toLowerCase()) ;
-        }
-    };
-    newUser.firstName = prompt("Write your first name");
-    newUser.secondName = prompt("Write your second name");
-    newUser.getLogin();
-    return newUser;
+let n = 5;
+function inputAsking(){
+   n = prompt("Write number:", `${n}`);
 }
-createNewUser();
+function inputChecking() {
+    while (n.replace (/\d/g, '').length || n== null) {
+        alert("Введите только цифры!");
+        inputAsking();
+    } alert ("All is fine");
+}
+function factorial(n) {
+    if (n === 1) {
+        return 1;
+    } else {
+        return n * factorial(n-1);
+    }
+}
+inputAsking();
+inputChecking();
+alert(factorial(n));
+
